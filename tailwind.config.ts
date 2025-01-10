@@ -13,7 +13,8 @@ export default {
         rubik: ["Rubik", "sans-serif"], // Statically define font family
       },
       boxShadow: {
-        custom: "0 4px 6px rgba(0, 0, 0, 0.1)",
+        product: "0px 4px 20px 0px rgba(9, 43, 94, 0.06)", // Regular shadow
+        "product-hover": "0px 6px 24px 0px rgba(9, 43, 94, 0.12)", // Hover shadow
       },
       colors: {
         background: "var(--background)",

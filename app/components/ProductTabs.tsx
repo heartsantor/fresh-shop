@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface TabsProps {
   tabs: string[];
@@ -15,8 +15,8 @@ const ProductTabs: React.FC<TabsProps> = ({ tabs, activeTab, onTabClick }) => {
           onClick={() => onTabClick(tab)}
           className={`px-6 py-2 rounded-lg ${
             activeTab === tab
-              ? 'bg-green-700 text-white'
-              : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              ? "bg-[#749B3F] text-white"
+              : "bg-white border hover:bg-gray-100"
           }`}
         >
           {tab}

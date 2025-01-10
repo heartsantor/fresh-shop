@@ -76,48 +76,50 @@ const ProductSection = () => {
       : products.filter((product) => product.category === activeTab);
 
   return (
-    <section className="relative py-16 bg-gray-50">
-      {/* Floating Leaves */}
-      <div className="absolute top-0 left-0">
-        <Image
-          src="/images/leaf-left.png"
-          alt="Leaf Left"
-          width={100}
-          height={100}
-        />
-      </div>
-      <div className="absolute top-0 right-0">
-        <Image
-          src="/images/leaf-right.png"
-          alt="Leaf Right"
-          width={100}
-          height={100}
-        />
-      </div>
-
+    <section className="relative py-40 bg-white">
       <div className="container mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-block px-4 py-1 bg-green-100 rounded-lg">
-            <span className="text-green-700 font-medium">Our Products</span>
+        <div className="relative text-center mb-6">
+          <div className="absolute top-4 left-10">
+            <Image
+              src="/images/leaf-left.png"
+              alt="Leaf Left"
+              width={100}
+              height={100}
+            />
           </div>
-          <h2 className="text-4xl font-bold text-gray-900 my-4">
-            Our Fresh Products
-          </h2>
-          <p className="text-gray-600">
-            We pride ourselves on offering a wide variety of fresh and flavorful
-            fruits, vegetables, and salad ingredients.
-          </p>
+          <div className="absolute top-0 right-10">
+            <Image
+              src="/images/leaf-right.png"
+              alt="Leaf Right"
+              width={100}
+              height={100}
+            />
+          </div>
+          <div className="text-center">
+            <div className="inline-block px-3 py-1 bg-[#749B3F1A] rounded-tl-lg">
+              <span className="text-[#749B3F] font-bold text-md font-questrial  tracking-tighter">
+                Our Products
+              </span>
+            </div>
+
+            <h2 className="text-[#212337] my-4 font-rubik text-[48px] font-medium leading-[56.88px] tracking-[-0.02em] text-center">
+              Our Fresh Products
+            </h2>
+
+            <p className="text-[#4A4A52] mx-auto font-questrial text-md font-normal text-center max-w-[600px] mb-0">
+              We pride ourselves on offering a wide variety of fresh and
+              flavorful fruits, vegetables, and salad ingredients.
+            </p>
+          </div>
         </div>
 
-        {/* Tabs */}
         <ProductTabs
           tabs={["All", "Fruits", "Vegetables", "Salad"]}
           activeTab={activeTab}
           onTabClick={handleTabClick}
         />
 
-        {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredProducts.map((product) => (
             <ProductCard
@@ -129,9 +131,8 @@ const ProductSection = () => {
           ))}
         </div>
 
-        {/* See All Products Button */}
         <div className="mt-12 text-center">
-          <button className="bg-orange-500 text-white px-8 py-3 rounded-lg hover:bg-orange-600">
+          <button className="px-8 py-2 border-2 border-orange-500 text-orange-500 rounded-lg hover:bg-orange-500 hover:text-white transition-all">
             See All Products
           </button>
         </div>
