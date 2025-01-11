@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import useModal from "@/app/hooks/useModal";
+import useModal from "@/hooks/useModal";
 import LoginModal from "@/components/modals/LoginModal";
 
 const Header = () => {
