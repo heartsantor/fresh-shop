@@ -1,16 +1,34 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import TestimonialCard from "./TestimonialCard";
 
-const TestimonialSliderSection = () => {
+const TestimonialSliderSection: React.FC = () => {
+  const testimonials = [
+    {
+      image: "/images/customer1.png",
+      testimonial: `"I absolutely love Fresh Harvest! The quality of their produce is outstanding. It's always fresh, flavorful, and delicious. The convenience of ordering online and having it delivered to my doorstep saves me so much time. Fresh Harvest has become my go-to for all my fruit and vegetable needs.`,
+      name: "Jane Doe",
+      profession: "Professional Chef",
+    },
+    {
+      image: "/images/customer1.png",
+      testimonial: `"I absolutely love Fresh Harvest! The quality of their produce is outstanding. It's always fresh, flavorful, and delicious. The convenience of ordering online and having it delivered to my doorstep saves me so much time. Fresh Harvest has become my go-to for all my fruit and vegetable needs.`,
+      name: "John Smith",
+      profession: "Fitness Trainer",
+    },
+  ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef<any>(null);
+
   return (
     <section className="relative py-40 bg-white overflow-hidden">
-      {/* Leaf Decorations */}
       <div className="container mx-auto">
         <div className="relative text-center mb-6">
           <div className="absolute top-4 left-10">
@@ -41,79 +59,40 @@ const TestimonialSliderSection = () => {
             </h2>
 
             <p className="text-[#4A4A52] mx-auto font-questrial text-md font-normal text-center max-w-[600px] mb-0">
-              Don’t just take our word for it—here’s what some of our customers
+              Don't just take our word for it—here's what some of our customers
               have to say about their experience with Fresh Harvest:
             </p>
           </div>
         </div>
 
-        <div className="container mx-auto px-4">
-          <Swiper
-            spaceBetween={50}
-            slidesPerView={1}
-            loop={true}
-            pagination={{ clickable: true }}
-            modules={[Pagination]}
-          >
-            {/* Slide 1 */}
-            <SwiperSlide>
-              <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
-                {/* Image */}
-                <div className="w-40 h-40 rounded-full overflow-hidden shadow-md">
-                  <Image
-                    src="/images/customer1.png"
-                    alt="Customer Testimonial"
-                    width={160}
-                    height={160}
-                  />
-                </div>
-                {/* Testimonial */}
-                <div className="bg-gray-100 rounded-lg p-8 shadow-md w-full lg:w-1/2">
-                  <p className="text-gray-700 text-lg mb-4">
-                    "I absolutely love Fresh Harvest! The quality of their
-                    produce is outstanding. It’s always fresh, flavorful, and
-                    delicious. The convenience of ordering online and having it
-                    delivered to my doorstep saves me so much time. Fresh
-                    Harvest has become my go-to for all my fruit and vegetable
-                    needs."
-                  </p>
-                  <h4 className="font-bold text-gray-900">Jane Doe</h4>
-                  <p className="text-gray-600 text-sm">Professional Chef</p>
-                </div>
-              </div>
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={1}
+          loop={true}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          modules={[Pagination]}
+        >
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide key={index}>
+              <TestimonialCard {...testimonial} />
             </SwiperSlide>
+          ))}
+        </Swiper>
 
-            {/* Slide 2 */}
-            <SwiperSlide>
-              <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
-                {/* Image */}
-                <div className="w-40 h-40 rounded-full overflow-hidden shadow-md">
-                  <Image
-                    src="/images/customer1.png"
-                    alt="Customer Testimonial"
-                    width={160}
-                    height={160}
-                  />
-                </div>
-                {/* Testimonial */}
-                <div className="bg-gray-100 rounded-lg p-8 shadow-md w-full lg:w-1/2">
-                  <p className="text-gray-700 text-lg mb-4">
-                    "Fresh Harvest has been a game changer for my family. The
-                    variety of fresh produce they offer is unmatched, and their
-                    delivery service is incredibly reliable. I highly recommend
-                    them to anyone who values quality and convenience."
-                  </p>
-                  <h4 className="font-bold text-gray-900">John Smith</h4>
-                  <p className="text-gray-600 text-sm">Fitness Trainer</p>
-                </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </div>
-
-        {/* Pagination Dots */}
-        <div className="mt-16 flex justify-center">
-          <div className="swiper-pagination custom-pagination"></div>
+        {/* Custom Dots */}
+        <div className="flex justify-center space-x-4 mt-6">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              className={`w-4 h-4 rounded-full transition transform duration-300 ${
+                activeIndex === index
+                  ? "bg-[#749B3F] scale-105"
+                  : "bg-gray-300 scale-100"
+              }`}
+              onClick={() => swiperRef.current?.slideToLoop(index)}
+            ></button>
+          ))}
         </div>
       </div>
     </section>

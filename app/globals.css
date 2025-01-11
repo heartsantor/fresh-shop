@@ -8,18 +8,19 @@ body {
   background-color: #ffffff; /* White background */
 }
 
-.swiper-pagination-bullet {
+/* .custom-swiper-bullet {
+  background-color: #d9d9d9;
   width: 12px;
   height: 12px;
-  background: #d9d9d9; /* Unfilled color */
-  opacity: 1; /* Ensure visible */
-  margin: 0 8px; /* Add some spacing between dots */
+  border-radius: 50%;
+  margin: 0 5px;
 }
+.custom-swiper-bullet-active {
+  background-color: #749b3f;
+  transform: scale(1.2);
+} */
 
-.swiper-pagination-bullet-active {
-  background: #749b3f; /* Filled color for active dot */
-}
-
-.swiper-pagination {
-  margin-top: 20px; /* Adjust distance from the slider */
-}
+/* .swiper-pagination-bullet-active {
+  background-color: #749b3f !important;
+  transform: scale(1.2) !important;
+} */

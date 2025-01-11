@@ -62,7 +62,7 @@ const SeasonalOfferSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto flex flex-col lg:flex-row items-center py-16">
         {/* Offer Text */}
-        <div className="lg:w-full p-8">
+        <div className="w-full lg:p-8">
           <div className="bg-green-10  inline-block px-4 py-1 rounded mb-2">
             <span className="text-green-100 font-medium">Special Offer</span>
           </div>
