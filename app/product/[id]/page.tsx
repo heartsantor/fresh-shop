@@ -1,5 +1,4 @@
 import ProductDetails from "./ProductDetails";
-import { use } from "react";
 
 // Mock Fetch Product Data Function (replace with actual API call)
 const fetchProduct = async (id: string) => {
@@ -26,7 +25,8 @@ export default async function ProductPage({
 }: {
   params: { id: string };
 }) {
-  const product = await fetchProduct(params?.id);
+  // Access params.id directly
+  const product = await fetchProduct(params.id);
 
   if (!product) {
     return (

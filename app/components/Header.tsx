@@ -4,11 +4,15 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import useModal from "@/app/hooks/useModal";
+import LoginModal from "./modals/LoginModal";
 
 const Header = () => {
+  const pathname = usePathname();
+  const { isOpen, openModal, closeModal } = useModal();
+
   const [scrolled, setScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const pathname = usePathname();
 
   const isHomeRoute = pathname === "/"; // Check if current route is home
   console.log("🚀 ~ Header ~ isHomeRoute:", isHomeRoute);
@@ -140,12 +144,12 @@ const Header = () => {
                 </span>
               )}
             </div>
-            <Link
-              href="/sign-in"
+            <button
+              onClick={openModal}
               className={`px-4 py-2 font-questrial text-[14px] font-normal border hover:border-transparent rounded-md hover:bg-orange-600 hover:text-white transition ${buttonClass}`}
             >
               Sign In
-            </Link>
+            </button>
           </div>
           <div className="sm:hidden flex">
             <div
@@ -266,6 +270,7 @@ const Header = () => {
           </div>
         </div>
       )}
+      <LoginModal isOpen={isOpen} onClose={closeModal} />
     </>
   );
 };
