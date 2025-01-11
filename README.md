@@ -7,17 +7,17 @@
    ```bash
    git clone https://github.com/heartsantor/fresh-shop.git
    ```
-### 2. Install dependencies
+2. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Set up environment variables
+1. Set up environment variables
 Create `.env` file and set env variables from `.env.example` file.
 
 
-### 4. Run the dev server
+1. Run the dev server
 
 You can start the server using this command:
 
