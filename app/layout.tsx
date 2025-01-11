@@ -5,6 +5,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import "./globals.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const questrial = Questrial({
   subsets: ["latin"], // Specify subsets you need
@@ -29,7 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${questrial.className} ${rubik.className} antialiased`}>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

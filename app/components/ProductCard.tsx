@@ -1,17 +1,28 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from 'next/navigation';
 
 interface ProductCardProps {
   name: string;
   price: string;
   image: string;
+  id: number;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ name, price, image }) => {
+const ProductCard: React.FC<ProductCardProps> = ({
+  id,
+  name,
+  price,
+  image,
+}) => {
+  const router = useRouter();
   return (
     <div className="bg-white shadow-product hover:shadow-product-hover rounded-[16px] p-2 md:p-4 text-center">
       {/* Product Image Section */}
-      <div className="bg-[#F4F6F6] rounded-[16px] md:p-4 mb-2 md:mb-4">
+      <div
+        className="bg-[#F4F6F6] rounded-[16px] md:p-4 mb-2 md:mb-4 cursor-pointer"
+        onClick={() => router.push(`/product/${id}`)}
+      >
         <Image
           src={image}
           alt={name}

@@ -10,6 +10,9 @@ const Header = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const pathname = usePathname();
 
+  const isHomeRoute = pathname === "/"; // Check if current route is home
+  console.log("🚀 ~ Header ~ isHomeRoute:", isHomeRoute);
+
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Shop", href: "/#shop" },
@@ -32,7 +35,9 @@ const Header = () => {
 
   const buttonClass = scrolled
     ? "border-gray-800 text-gray-800"
-    : "border-white text-white";
+    : isHomeRoute
+    ? "border-white text-white"
+    : "border-black text-black";
 
   return (
     <>
@@ -62,7 +67,7 @@ const Header = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative hover:text-green-700 font-questrial text-[14px] font-normal leading-[24px] tracking-tighter text-gray-800 text-left underline-offset-2 decoration-slice`}
+                className={`relative hover:text-green-100 font-questrial text-[14px]  text-gray-100 text-left underline-offset-2 decoration-slice`}
               >
                 {item.name}
                 {/* Active Indicator */}
@@ -78,7 +83,9 @@ const Header = () => {
               className={`relative flex items-center cursor-pointer ${
                 scrolled
                   ? "text-gray-800 hover:text-green-700"
-                  : "text-white hover:text-gray-300"
+                  : isHomeRoute
+                  ? "text-white hover:text-gray-300"
+                  : "text-green-100"
               }`}
             >
               <svg
@@ -104,7 +111,9 @@ const Header = () => {
               className={`relative flex items-center cursor-pointer ${
                 scrolled
                   ? "text-gray-800 hover:text-green-700"
-                  : "text-white hover:text-gray-300"
+                  : isHomeRoute
+                  ? "text-white hover:text-gray-300"
+                  : "text-green-100"
               }`}
             >
               <svg
@@ -126,7 +135,7 @@ const Header = () => {
               </span>
               {/* Badge */}
               {cartCount > 0 && (
-                <span className="absolute -top-2 right-8 bg-red-500 font-questrial text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
+                <span className="absolute -top-3 right-6 bg-red-500 font-questrial text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
                   {cartCount}
                 </span>
               )}
@@ -143,7 +152,9 @@ const Header = () => {
               className={`relative flex items-center cursor-pointer me-6 ${
                 scrolled
                   ? "text-gray-800 hover:text-green-700"
-                  : "text-white hover:text-gray-300"
+                  : isHomeRoute
+                  ? "text-white hover:text-gray-300"
+                  : "text-green-100"
               }`}
             >
               <svg
@@ -173,7 +184,9 @@ const Header = () => {
               className={`flex items-center justify-center ${
                 scrolled
                   ? "text-gray-800 hover:text-green-700"
-                  : "text-white hover:text-gray-300"
+                  : isHomeRoute
+                  ? "text-white hover:text-gray-300"
+                  : "text-green-100"
               }`}
               onClick={() => setIsDrawerOpen(true)}
             >
