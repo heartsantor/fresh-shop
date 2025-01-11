@@ -83,7 +83,7 @@ const SeasonalOfferSection = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center justify-center bg-white rounded-lg shadow-time p-6"
+                className="flex flex-col items-center justify-center bg-white rounded-lg shadow-time md:p-6"
               >
                 <div className="text-[40px] font-normal  text-gray-900">
                   {item.value}
