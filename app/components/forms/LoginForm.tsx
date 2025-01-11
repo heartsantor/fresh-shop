@@ -96,7 +96,7 @@ const LoginForm: React.FC = () => {
         <div className="flex-grow border-t border-gray-300"></div>
       </div>
       <div className="flex space-x-4">
-        <button className="flex-1 py-2 border rounded-lg flex items-center justify-center space-x-2 hover:bg-gray-100 transition">
+        <button className="flex-1 py-2 border rounded-lg flex items-center justify-center space-x-2 hover:bg-green-10 transition">
           <svg
             width="21"
             height="21"
@@ -170,7 +170,7 @@ const LoginForm: React.FC = () => {
 
           <span>Google</span>
         </button>
-        <button className="flex-1 py-2 border rounded-lg flex items-center justify-center space-x-2 hover:bg-gray-100 transition">
+        <button className="flex-1 py-2 border rounded-lg flex items-center justify-center space-x-2 hover:bg-green-10 transition">
           <svg
             width="20"
             height="21"

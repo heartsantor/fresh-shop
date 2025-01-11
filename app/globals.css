@@ -8,19 +8,6 @@ body {
   background-color: #ffffff; /* White background */
 }
 
-/* .custom-swiper-bullet {
-  background-color: #d9d9d9;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin: 0 5px;
+input[type="checkbox"]:checked + svg {
+  display: block;
 }
-.custom-swiper-bullet-active {
-  background-color: #749b3f;
-  transform: scale(1.2);
-} */
-
-/* .swiper-pagination-bullet-active {
-  background-color: #749b3f !important;
-  transform: scale(1.2) !important;
-} */
