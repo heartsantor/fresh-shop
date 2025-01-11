@@ -43,7 +43,7 @@ const SeasonalOfferSection = () => {
           height={0}
         />
       </div>
-      <div className="absolute top-[10%] right-[30%]">
+      <div className="absolute top-[6%] md:top-[10%] right-4 md:right-[30%]">
         <Image
           src="/images/leaf-left-top.png" // Replace with your actual image
           alt="Right Top Decoration"
@@ -62,19 +62,20 @@ const SeasonalOfferSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto flex flex-col lg:flex-row items-center py-16">
         {/* Offer Text */}
-        <div className="w-full lg:p-8">
+        <div className="w-full lg:p-8 text-center md:text-left">
           <div className="bg-green-10  inline-block px-4 py-1 rounded mb-2">
             <span className="text-green-100 font-medium">Special Offer</span>
           </div>
-          <h1 className="text-heading-1 font-rubik font-medium text-gray-100 mb-2">
+          <h1 className="text-[48px] md:text-[80px] font-rubik font-medium text-black mb-2">
             Seasonal Fruit Bundle
           </h1>
-          <p className="text-heading-2 font-medium text-black mb-6">
-            Discount up to <span className="text-primary">80% OFF</span>
+          <p className="text-[32px] md:text-heading-2 font-medium text-black mb-6">
+            Discount up to{" "}
+            <span className="text-primary block md:inline">80% OFF</span>
           </p>
 
           {/* Countdown Timer */}
-          <div className="flex space-x-4 mb-8">
+          <div className="flex space-x-4 mb-8 justify-center md:justify-start">
             {[
               { value: "03", label: "Days" },
               { value: "18", label: "Hour" },
@@ -83,7 +84,7 @@ const SeasonalOfferSection = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center justify-center bg-white rounded-lg shadow-time md:p-6"
+                className="flex flex-col items-center justify-center bg-white rounded-lg shadow-time p-4 md:p-6"
               >
                 <div className="text-[40px] font-normal  text-gray-900">
                   {item.value}
@@ -96,16 +97,18 @@ const SeasonalOfferSection = () => {
           </div>
 
           {/* Promo Code */}
-          <div className="bg-green-700 text-white inline-block px-8 py-4 rounded-full shadow-time">
-            <span className="text-[32px] font-semibold">CODE :</span>{" "}
-            <span className="text-yellow-400 text-[32px] font-semibold">
+          <div className="bg-green-700 text-white inline-block px-8 py-4 rounded-full shadow-time mb-4 md:mb-0">
+            <span className="text-[24px] md:text-[32px] font-semibold">
+              CODE :
+            </span>{" "}
+            <span className="text-yellow-400 text-[24px] md:text-[32px] font-semibold">
               FRUIT28
             </span>
           </div>
         </div>
 
         {/* Fruit Images */}
-        <div className="absolute right-0 lg:w-[46%] flex justify-center items-center">
+        <div className="absolute right-0 lg:w-[46%]  justify-center items-center hidden md:flex">
           <Image
             src="/images/oranges.png"
             alt="Seasonal Fruits"

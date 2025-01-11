@@ -76,38 +76,38 @@ const ProductSection = () => {
       : products.filter((product) => product.category === activeTab);
 
   return (
-    <section className="relative py-40 bg-white overflow-hidden">
+    <section className="relative py-10 md:py-32 bg-white overflow-hidden">
       <div className="container mx-auto">
         {/* Header */}
         <div className="relative text-center mb-6">
-          <div className="absolute top-4 left-10 hidden md:block">
+          <div className="absolute top-4 left-0 md:left-20">
             <Image
               src="/images/leaf-left.png"
               alt="Leaf Left"
-              width={100}
-              height={100}
+              width={66}
+              height={0}
             />
           </div>
-          <div className="absolute top-0 right-10 hidden md:block">
+          <div className="absolute top-0 right-1 md:right-20">
             <Image
               src="/images/leaf-right.png"
               alt="Leaf Right"
-              width={100}
-              height={100}
+              width={66}
+              height={0}
             />
           </div>
           <div className="text-center">
             <div className="inline-block px-3 py-1 bg-[#749B3F1A] rounded-tl-lg">
-              <span className="text-[#749B3F] font-bold text-md font-questrial  tracking-tighter">
+              <span className="text-[#749B3F] font-bold text-[14px] md:text-[20px] font-questrial tracking-tighter">
                 Our Products
               </span>
             </div>
 
-            <h2 className="text-[#212337] my-4 font-rubik text-[48px] font-medium leading-[56.88px] tracking-[-0.02em] text-center">
+            <h2 className="text-[#212337] my-4 font-rubik text-[32px] md:text-[48px] font-medium text-center">
               Our Fresh Products
             </h2>
 
-            <p className="text-[#4A4A52] mx-auto font-questrial text-md font-normal text-center max-w-[600px] mb-0">
+            <p className="text-[#4A4A52] mx-auto font-questrial text-md font-normal text-center w-[90%] md:max-w-[600px] mb-0">
               We pride ourselves on offering a wide variety of fresh and
               flavorful fruits, vegetables, and salad ingredients.
             </p>
@@ -120,7 +120,7 @@ const ProductSection = () => {
           onTabClick={handleTabClick}
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 px-4">
           {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}

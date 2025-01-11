@@ -38,8 +38,8 @@ const HeroBanner = () => {
           className="absolute top-[10%] left-[0%] hidden md:block"
         />
         {/* Text and Call-to-Action */}
-        <div className="w-[100%] lg:w-[60%] py-20 md:py-32 px-4 md:ps-24 md:text-center lg:text-left relative z-40">
-          <div className="absolute top-[15%] right-[50%] md:right-[10%] 2xl:right-[20%]">
+        <div className="w-[100%] lg:w-[60%] pt-32 pb-20 md:py-32 px-4 md:ps-24 md:text-center lg:text-left relative z-40">
+          <div className="absolute top-[20%] md:top-[15%] right-[50%] md:right-[10%] 2xl:right-[20%]">
             <Image
               src="/images/leaf-right.png" // Replace with your actual image
               alt="Right Top Decoration"

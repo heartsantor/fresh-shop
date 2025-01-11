@@ -9,9 +9,9 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ name, price, image }) => {
   return (
-    <div className="bg-white shadow-product hover:shadow-product-hover rounded-[16px] p-4 text-center">
+    <div className="bg-white shadow-product hover:shadow-product-hover rounded-[16px] p-2 md:p-4 text-center">
       {/* Product Image Section */}
-      <div className="bg-[#F4F6F6] rounded-[16px] p-4 mb-4">
+      <div className="bg-[#F4F6F6] rounded-[16px] md:p-4 mb-2 md:mb-4">
         <Image
           src={image}
           alt={name}

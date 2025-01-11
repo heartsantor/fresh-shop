@@ -138,26 +138,59 @@ const Header = () => {
               Sign In
             </Link>
           </div>
-
-          <button
-            className="sm:hidden flex items-center justify-center w-10 h-10 rounded bg-green-500 text-white"
-            onClick={() => setIsDrawerOpen(true)}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              stroke="currentColor"
-              className="w-6 h-6"
+          <div className="sm:hidden flex">
+            <div
+              className={`relative flex items-center cursor-pointer me-6 ${
+                scrolled
+                  ? "text-gray-800 hover:text-green-700"
+                  : "text-white hover:text-gray-300"
+              }`}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
-          </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3 3h2l.4 2M7 13h10l3.4-8H6.4L5.2 5H3m4 13a2 2 0 104 0 2 2 0 00-4 0zm10 0a2 2 0 104 0 2 2 0z"
+                />
+              </svg>
+
+              {/* Badge */}
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-3 bg-red-500 font-questrial text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
+                  {cartCount}
+                </span>
+              )}
+            </div>
+
+            <button
+              className={`flex items-center justify-center ${
+                scrolled
+                  ? "text-gray-800 hover:text-green-700"
+                  : "text-white hover:text-gray-300"
+              }`}
+              onClick={() => setIsDrawerOpen(true)}
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 18C3.71667 18 3.47917 17.9042 3.2875 17.7125C3.09583 17.5208 3 17.2833 3 17C3 16.7167 3.09583 16.4792 3.2875 16.2875C3.47917 16.0958 3.71667 16 4 16H20C20.2833 16 20.5208 16.0958 20.7125 16.2875C20.9042 16.4792 21 16.7167 21 17C21 17.2833 20.9042 17.5208 20.7125 17.7125C20.5208 17.9042 20.2833 18 20 18H4ZM4 13C3.71667 13 3.47917 12.9042 3.2875 12.7125C3.09583 12.5208 3 12.2833 3 12C3 11.7167 3.09583 11.4792 3.2875 11.2875C3.47917 11.0958 3.71667 11 4 11H20C20.2833 11 20.5208 11.0958 20.7125 11.2875C20.9042 11.4792 21 11.7167 21 12C21 12.2833 20.9042 12.5208 20.7125 12.7125C20.5208 12.9042 20.2833 13 20 13H4ZM4 8C3.71667 8 3.47917 7.90417 3.2875 7.7125C3.09583 7.52083 3 7.28333 3 7C3 6.71667 3.09583 6.47917 3.2875 6.2875C3.47917 6.09583 3.71667 6 4 6H20C20.2833 6 20.5208 6.09583 20.7125 6.2875C20.9042 6.47917 21 6.71667 21 7C21 7.28333 20.9042 7.52083 20.7125 7.7125C20.5208 7.90417 20.2833 8 20 8H4Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </header>
 
@@ -170,27 +203,41 @@ const Header = () => {
             className="fixed top-0 left-0 w-64 h-full bg-white shadow-lg z-[9999] p-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={() => setIsDrawerOpen(false)}
-              className="absolute top-4 right-4 p-2 focus:outline-none"
-              aria-label="Close Drawer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="w-6 h-6 text-gray-800"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
+            {/* Header with Logo and Close Button */}
+            <div className="flex items-center justify-between">
+              {/* Logo */}
+              <div className="flex items-center">
+                <Image
+                  src="/images/logo-header.png"
+                  alt="Fresh Harvest Logo"
+                  width={100}
+                  height={40}
                 />
-              </svg>
-            </button>
+              </div>
+              {/* Close Button */}
+              <button
+                onClick={() => setIsDrawerOpen(false)}
+                className="p-2 focus:outline-none"
+                aria-label="Close Drawer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="2"
+                  stroke="currentColor"
+                  className="w-6 h-6 text-gray-800"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
 
+            {/* Navigation Links */}
             <nav className="mt-8 space-y-4">
               {navItems.map((item) => (
                 <Link

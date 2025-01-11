@@ -34,10 +34,9 @@ const blogs = [
 
 const BlogSection = () => {
   return (
-    <section className="relative pt-16 pb-16 md:pb-40 bg-white overflow-hidden">
+    <section className="relative pt-10 pb-10 md:pb-32 bg-white overflow-hidden">
       <div className="container mx-auto">
         <div className="relative text-center mb-10">
-   
           <div className="absolute top-0 right-[14%] hidden md:block">
             <Image
               src="/images/leaf-right.png"
@@ -48,16 +47,16 @@ const BlogSection = () => {
           </div>
           <div className="text-center">
             <div className="inline-block px-3 py-1 bg-[#749B3F1A] rounded-tl-lg">
-              <span className="text-[#749B3F] font-bold text-md font-questrial  tracking-tighter">
+              <span className="text-[#749B3F] font-bold text-[14px] md:text-[20px] font-questrial tracking-tighter">
                 Our Blog
               </span>
             </div>
 
-            <h2 className="text-[#212337] my-4 font-rubik text-[48px] font-medium leading-[56.88px] tracking-[-0.02em] text-center">
+            <h2 className="text-[#212337] my-4 font-rubik text-[32px] md:text-[48px] font-medium text-center">
               Fresh Harvest Blog
             </h2>
 
-            <p className="text-[#4A4A52] mx-auto font-questrial text-md font-normal text-center max-w-[600px] mb-0">
+            <p className="text-[#4A4A52] mx-auto font-questrial text-md font-normal text-center w-[90%] md:max-w-[600px] mb-0">
               Welcome to the Fresh Harvest Blog, your go-to resource for all
               things related to fresh produce, healthy eating, and culinary
               inspiration.

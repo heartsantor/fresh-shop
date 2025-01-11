@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const AboutSection = () => {
   return (
-    <section className="relative pt-20 pb-40 bg-white overflow-hidden">
+    <section className="relative pb-16 md:pb-32 bg-white overflow-hidden">
       <div className="container mx-auto flex flex-col lg:flex-row items-center">
         <div className="lg:w-1/2 relative flex justify-center">
           <Image
@@ -49,18 +49,18 @@ const AboutSection = () => {
           </div>
         </div>
 
-        <div className="lg:w-1/2 text-center lg:text-left mt-8 lg:mt-0 lg:ml-5">
-          <div className="inline-block px-3 py-1 bg-green/20 rounded-tl-lg mb-4">
+        <div className="lg:w-1/2 md:text-center lg:text-left mt-8 lg:mt-0 lg:ml-5 px-4">
+          <div className="inline-block px-3 py-1 bg-green-10 rounded-tl-lg mb-4">
             <span className="text-green font-rubik text-sub-heading-1">
               About us
             </span>
           </div>
 
-          <h2 className="text-heading-2 font-rubik font-medium text-black mb-6">
+          <h2 className="text-[32px] md:text-heading-2 font-rubik font-medium text-black mb-6">
             About Fresh Harvest
           </h2>
 
-          <p className="text-body-3 font-questrial text-gray-100 mb-6">
+          <p className="text-[14px] md:text-[12px] font-questrial text-gray-100 mb-6">
             Welcome to Fresh Harvest, your premier destination for high-quality
             and fresh produce. We are passionate about providing you with the
             finest fruits, vegetables, and salad ingredients to nourish your

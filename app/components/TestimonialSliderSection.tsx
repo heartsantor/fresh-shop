@@ -28,10 +28,10 @@ const TestimonialSliderSection: React.FC = () => {
   const swiperRef = useRef<any>(null);
 
   return (
-    <section className="relative py-40 bg-white overflow-hidden">
+    <section className="relative py-14 md:py-32 bg-white overflow-hidden">
       <div className="container mx-auto">
         <div className="relative text-center mb-6">
-          <div className="absolute top-4 left-10 hidden md:block">
+          <div className="absolute top-4 left-0 md:left-10 ">
             <Image
               src="/images/leaf-left.png"
               alt="Leaf Left"
@@ -39,7 +39,7 @@ const TestimonialSliderSection: React.FC = () => {
               height={0}
             />
           </div>
-          <div className="absolute top-0 right-10 hidden md:block">
+          <div className="absolute top-0 right-0 md:right-10">
             <Image
               src="/images/leaf-right.png"
               alt="Leaf Right"
@@ -49,16 +49,16 @@ const TestimonialSliderSection: React.FC = () => {
           </div>
           <div className="text-center">
             <div className="inline-block px-3 py-1 bg-[#749B3F1A] rounded-tl-lg">
-              <span className="text-[#749B3F] font-bold text-md font-questrial  tracking-tighter">
+              <span className="text-[#749B3F] font-bold text-[14px] md:text-[20px] font-questrial tracking-tighter">
                 Testimonial
               </span>
             </div>
 
-            <h2 className="text-[#212337] my-4 font-rubik text-[48px] font-medium leading-[56.88px] tracking-[-0.02em] text-center">
-              What Our Customers Say
+            <h2 className="text-[#212337] my-4 font-rubik text-[32px] md:text-[48px] font-medium text-center">
+              What Our <span className="block md:inline">Customers Say</span>
             </h2>
 
-            <p className="text-[#4A4A52] mx-auto font-questrial text-md font-normal text-center max-w-[600px] mb-0">
+            <p className="text-[#4A4A52] mx-auto font-questrial text-md font-normal text-center w-[90%] md:max-w-[600px] mb-0">
               Don't just take our word for it—here's what some of our customers
               have to say about their experience with Fresh Harvest:
             </p>
