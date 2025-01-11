@@ -30,7 +30,20 @@ const BlogCard: React.FC<BlogCardProps> = ({ title, date, image }) => {
           className="text-orange-500 font-medium flex items-center gap-2 hover:underline"
         >
           Read More
-          <span className="text-xl">→</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+            stroke="currentColor"
+            className="w-4 h-4 mt-1"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.5 4.5l6 6-6 6M5.5 10.5h13"
+            />
+          </svg>
         </a>
       </div>
     </div>

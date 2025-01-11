@@ -31,20 +31,20 @@ const TestimonialSliderSection: React.FC = () => {
     <section className="relative py-40 bg-white overflow-hidden">
       <div className="container mx-auto">
         <div className="relative text-center mb-6">
-          <div className="absolute top-4 left-10">
+          <div className="absolute top-4 left-10 hidden md:block">
             <Image
               src="/images/leaf-left.png"
               alt="Leaf Left"
-              width={100}
-              height={100}
+              width={66}
+              height={0}
             />
           </div>
-          <div className="absolute top-0 right-10">
+          <div className="absolute top-0 right-10 hidden md:block">
             <Image
               src="/images/leaf-right.png"
               alt="Leaf Right"
-              width={100}
-              height={100}
+              width={66}
+              height={0}
             />
           </div>
           <div className="text-center">

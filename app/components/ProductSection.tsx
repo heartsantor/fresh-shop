@@ -80,7 +80,7 @@ const ProductSection = () => {
       <div className="container mx-auto">
         {/* Header */}
         <div className="relative text-center mb-6">
-          <div className="absolute top-4 left-10">
+          <div className="absolute top-4 left-10 hidden md:block">
             <Image
               src="/images/leaf-left.png"
               alt="Leaf Left"
@@ -88,7 +88,7 @@ const ProductSection = () => {
               height={100}
             />
           </div>
-          <div className="absolute top-0 right-10">
+          <div className="absolute top-0 right-10 hidden md:block">
             <Image
               src="/images/leaf-right.png"
               alt="Leaf Right"
