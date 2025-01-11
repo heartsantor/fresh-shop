@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 interface ProductCardProps {
   name: string;
   price: string;
   image: string;
-  id: number;
+  id: string;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
@@ -17,18 +17,18 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   const router = useRouter();
   return (
-    <div className="bg-white shadow-product hover:shadow-product-hover rounded-[16px] p-2 md:p-4 text-center">
+    <div className="bg-white shadow-product hover:shadow-product-hover rounded-[16px] p-2 md:p-4 text-center flex flex-col justify-between">
       {/* Product Image Section */}
       <div
-        className="bg-[#F4F6F6] rounded-[16px] md:p-4 mb-2 md:mb-4 cursor-pointer"
+        className="bg-[#F4F6F6] rounded-[16px] md:p-4 mb-2 md:mb-4 cursor-pointer h-[150px] flex items-center justify-center overflow-hidden"
         onClick={() => router.push(`/product/${id}`)}
       >
         <Image
           src={image}
           alt={name}
-          width={150}
-          height={150}
-          className="mx-auto"
+          width={120}
+          height={120}
+          className="object-contain"
         />
       </div>
 

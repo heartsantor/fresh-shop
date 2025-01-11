@@ -1,69 +1,23 @@
 "use client";
-import React, { useState } from "react";
+
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { useSelector, useDispatch } from "react-redux";
+import { AppDispatch, RootState } from "@/app/store";
+
 import ProductTabs from "./ProductTabs";
 import ProductCard from "./ProductCard";
 
-const products = [
-  {
-    id: 1,
-    name: "Mushroom",
-    price: "$2.3",
-    category: "Vegetables",
-    image: "/items/mushroom.png",
-  },
-  {
-    id: 2,
-    name: "Mustard",
-    price: "$1.3",
-    category: "Vegetables",
-    image: "/items/mustard.png",
-  },
-  {
-    id: 3,
-    name: "Orange",
-    price: "$4.2",
-    category: "Fruits",
-    image: "/items/orange.png",
-  },
-  {
-    id: 4,
-    name: "Pomegranate",
-    price: "$11.2",
-    category: "Fruits",
-    image: "/items/pomegranate.png",
-  },
-  {
-    id: 5,
-    name: "Kiwi",
-    price: "$5.3",
-    category: "Fruits",
-    image: "/items/kiwi.png",
-  },
-  {
-    id: 6,
-    name: "Coconut",
-    price: "$6.3",
-    category: "Fruits",
-    image: "/items/coconut.png",
-  },
-  {
-    id: 7,
-    name: "Guava",
-    price: "$2.2",
-    category: "Fruits",
-    image: "/items/guava.png",
-  },
-  {
-    id: 8,
-    name: "Eggplant",
-    price: "$1.2",
-    category: "Vegetables",
-    image: "/items/eggplant.png",
-  },
-];
-
 const ProductSection = () => {
+  const dispatch = useDispatch<AppDispatch>();
+
+  const { products, loading: productsLoading } = useSelector(
+    (state: RootState) => state.products
+  );
+  const { categories, loading: categoriesLoading } = useSelector(
+    (state: RootState) => state.categories
+  );
+
   const [activeTab, setActiveTab] = useState("All");
 
   const handleTabClick = (tab: string) => {
@@ -73,7 +27,25 @@ const ProductSection = () => {
   const filteredProducts =
     activeTab === "All"
       ? products
-      : products.filter((product) => product.category === activeTab);
+      : products.filter((product) => {
+          const category = categories.find(
+            (cat) => cat.id === product.categoryId
+          );
+          return category && category.categoryName === activeTab;
+        });
+
+  // useEffect(() => {
+  //   const initializeData = () => {
+  //     dispatch(fetchCategories());
+  //     dispatch(fetchProducts());
+  //   };
+
+  //   initializeData();
+  // }, [dispatch]);
+
+  if (productsLoading || categoriesLoading) {
+    return <div>Loading...</div>; // Avoid rendering mismatched HTML
+  }
 
   return (
     <section className="relative py-10 md:py-32 bg-white overflow-hidden">
@@ -115,9 +87,9 @@ const ProductSection = () => {
         </div>
 
         <ProductTabs
-          tabs={["All", "Fruits", "Vegetables", "Salad"]}
+          tabs={["All", ...categories.map((category) => category.categoryName)]}
           activeTab={activeTab}
-          onTabClick={handleTabClick}
+          onTabClick={setActiveTab}
         />
 
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 px-4">
@@ -125,9 +97,9 @@ const ProductSection = () => {
             <ProductCard
               key={product.id}
               id={product.id}
-              name={product.name}
-              price={product.price}
-              image={product.image}
+              name={product.productName}
+              price={`$${product.price}`}
+              image={product.images[0]}
             />
           ))}
         </div>

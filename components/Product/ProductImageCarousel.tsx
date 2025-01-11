@@ -28,13 +28,13 @@ const ProductImageCarousel: React.FC<ProductImageCarouselProps> = ({
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <div className="w-full h-auto flex justify-center items-center p-4">
+            <div className="w-full flex justify-center items-center p-4 md:h-[566px] h-[342px]">
               <Image
                 src={image}
                 alt={`Product Image ${index + 1}`}
                 width={500} // Adjust width
                 height={0} // Adjust height
-                className="object-contain rounded-lg w-[100%]"
+                className="object-contain rounded-lg w-[90%]"
               />
             </div>
           </SwiperSlide>

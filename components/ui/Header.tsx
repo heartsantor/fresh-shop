@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import useModal from "@/app/hooks/useModal";
-import LoginModal from "./modals/LoginModal";
+import LoginModal from "@/components/modals/LoginModal";
 
 const Header = () => {
   const pathname = usePathname();
@@ -14,8 +14,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const isHomeRoute = pathname === "/"; // Check if current route is home
-  console.log("🚀 ~ Header ~ isHomeRoute:", isHomeRoute);
+  const isHomeRoute = pathname === "/";
 
   const navItems = [
     { name: "Home", href: "/" },

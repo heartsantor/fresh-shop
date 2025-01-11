@@ -1,25 +1,31 @@
 "use client";
 
 import React from "react";
-import ProductImageCarousel from "@/app/components/Product/ProductImageCarousel";
-import ProductDescriptionTabs from "@/app/components/Product/ProductDescriptionTabs";
-import RelatedProducts from "@/app/components/RelatedProducts";
+import ProductImageCarousel from "@/components/Product/ProductImageCarousel";
+import ProductDescriptionTabs from "@/components/Product/ProductDescriptionTabs";
+import RelatedProducts from "@/components/RelatedProducts";
 
 interface Product {
   id: string;
-  name: string;
+  productName: string;
+  categoryId: string;
   category: string;
-  price: string;
-  rating: number;
-  reviewsCount: number;
+  price: number;
+  stock: number;
   description: string;
-  longDescription: string;
-  imageUrls: string[];
+  longDescription?: string;
+  images: string[];
+  rating?: number; // Optional, assuming backend may not always provide it
+  reviewsCount?: number; // Optional
 }
 
-const ProductDetails: React.FC<{ product: Product }> = ({ product }) => {
-  const rating = 4.5;
-  const reviewsCount = 120;
+interface ProductDetailsProps {
+  product: Product;
+}
+
+const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
+  const rating = product.rating || 0; // Default rating if not provided
+  const reviewsCount = product.reviewsCount || 0;
 
   const fullStars = Math.floor(rating); // Full stars
   const halfStar = rating % 1 !== 0; // Check for a half star
@@ -30,7 +36,7 @@ const ProductDetails: React.FC<{ product: Product }> = ({ product }) => {
       <div className="px-6 py-12 grid grid-cols-1 md:grid-cols-12 gap-8">
         {/* Image Carousel */}
         <div className="md:col-span-5">
-          <ProductImageCarousel images={product.imageUrls} />
+          <ProductImageCarousel images={product.images} />
         </div>
 
         {/* Product Info */}
@@ -41,7 +47,7 @@ const ProductDetails: React.FC<{ product: Product }> = ({ product }) => {
             </span>
           </div>
           <h1 className="text-[32px] md:text-[48px] font-medium text-gray-900 md:mt-4 m-0">
-            {product.name}
+            {product.productName}
           </h1>
           <div className="flex items-center md:mt-2">
             {/* Full Stars */}
@@ -163,7 +169,7 @@ const ProductDetails: React.FC<{ product: Product }> = ({ product }) => {
       {/* Tabs Section */}
       <div className="px-4 md:col-span-2">
         <ProductDescriptionTabs
-          description={product.longDescription}
+          description={product.description}
           reviewsCount={product.reviewsCount}
         />
       </div>

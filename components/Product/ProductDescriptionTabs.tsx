@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 interface Props {
   description: string;
-  reviewsCount: number;
+  reviewsCount: any;
 }
 
 const ProductDescriptionTabs: React.FC<Props> = ({

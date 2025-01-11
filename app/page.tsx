@@ -1,10 +1,10 @@
-import AboutSection from "./components/AboutSection";
-import BlogSection from "./components/BlogSection";
+import AboutSection from "../components/AboutSection";
+import BlogSection from "../components/BlogSection";
 
-import HeroBanner from "./components/HeroBanner";
-import ProductSection from "./components/ProductSection";
-import SeasonalOfferSection from "./components/SeasonalOfferSection";
-import TestimonialSliderSection from "./components/TestimonialSliderSection";
+import HeroBanner from "../components/HeroBanner";
+import ProductSection from "../components/ProductSection";
+import SeasonalOfferSection from "../components/SeasonalOfferSection";
+import TestimonialSliderSection from "../components/TestimonialSliderSection";
 
 export default function HomePage() {
   return (
