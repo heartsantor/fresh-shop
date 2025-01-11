@@ -1,43 +1,20 @@
-import ProductDetails from "./ProductDetails";
+import ProductDetails from "../../components/ProductDetails";
 
-// Mock Fetch Product Data Function (replace with actual API call)
-const fetchProduct = async (id: string) => {
-  const products = [
-    {
-      id: "1",
-      name: "Coconut",
-      category: "Fruits",
-      price: "$6.3/kg",
-      rating: 5.0,
-      reviewsCount: 1,
-      description:
-        "From our farm directly to your door, our fresh coconuts are harvested at the peak of ripeness, offering you a sweet, hydrating treat full of flavor...",
-      longDescription:
-        "Our coconuts are sustainably grown, ensuring the best quality and taste...",
-      imageUrls: ["/items/coconut.png", "/items/eggplant.png"],
-    },
-  ];
-  return products.find((product) => product.id === id);
-};
-
-export default async function ProductPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  // Resolve `params.id` properly
-  const { id } = params;
-
-  // Fetch product data
-  const product = await fetchProduct(id);
-
-  if (!product) {
-    return (
-      <div className="h-screen flex justify-center items-center">
-        <p>Product not found</p>
-      </div>
-    );
-  }
+export default function ProductPage() {
+  // Static product object
+  const product = {
+    id: "1",
+    name: "Coconut",
+    category: "Fruits",
+    price: "$6.3/kg",
+    rating: 5.0,
+    reviewsCount: 1,
+    description:
+      "From our farm directly to your door, our fresh coconuts are harvested at the peak of ripeness, offering you a sweet, hydrating treat full of flavor...",
+    longDescription:
+      "Our coconuts are sustainably grown, ensuring the best quality and taste...",
+    imageUrls: ["/items/coconut.png", "/items/eggplant.png"],
+  };
 
   return (
     <div className="relative bg-white overflow-hidden">
