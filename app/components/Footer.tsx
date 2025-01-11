@@ -5,9 +5,9 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#F4F6F6]">
+    <footer className="bg-[#F4F6F6] overflow-hidden">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 px-4 py-9">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 px-4 py-4 md:py-9">
           {/* Left Section */}
           <div className="col-span-4 flex flex-col items-start space-y-2">
             {/* Logo */}
@@ -20,7 +20,7 @@ const Footer = () => {
               />
             </div>
             {/* App Downloads */}
-            <div>
+            <div className="hidden md:block">
               <span className="block text-gray-100 text-[12px] font-medium font-rubik mb-2">
                 Download App:
               </span>
@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
 
           {/* Right Section: Contact Us */}
-          <div className="col-span-8 grid grid-cols-1 md:grid-cols-12 gap-8 ">
+          <div className="col-span-8 grid grid-cols-12 gap-8 ">
             <div className="col-span-3 flex flex-col items-start space-y-2">
               <h4 className="text-gray-100 font-medium mb-4">Quick links 1</h4>
               <ul className="space-y-2 text-gray-600 text-[14px] font-normal font-questrial">
@@ -131,7 +131,7 @@ const Footer = () => {
                     />
                   </svg>
 
-                  <span>Freshharvests@gmail.com</span>
+                  <span className="break-words ">Freshharvests@gmail.com</span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <svg
@@ -152,7 +152,7 @@ const Footer = () => {
                 </li>
               </ul>
               {/* Accepted Payment Methods */}
-              <div className="!mt-6">
+              <div className="!mt-6 hidden md:block">
                 <h5 className="text-gray-900 font-medium font-rubik text-[12px] mb-2">
                   Accepted Payment Methods:
                 </h5>
@@ -180,16 +180,57 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className="block md:hidden px-4">
+          <div className="">
+            <h5 className="text-gray-900 font-medium font-rubik text-[12px] mb-2">
+              Accepted Payment Methods:
+            </h5>
+            <div className="flex space-x-2">
+              <Image src="/images/visa.png" alt="Visa" width={69} height={0} />
+              <Image
+                src="/images/paypal.png"
+                alt="PayPal"
+                width={69}
+                height={0}
+              />
+              <Image
+                src="/images/apple-pay.png"
+                alt="Apple Pay"
+                width={69}
+                height={0}
+              />
+            </div>
+          </div>
+          <div className="block md:hidden my-4">
+            <span className="block text-gray-100 text-[12px] font-medium font-rubik mb-2">
+              Download App:
+            </span>
+            <div className="flex space-x-2">
+              <Image
+                src="/images/app-store.png"
+                alt="App Store"
+                width={138}
+                height={40}
+              />
+              <Image
+                src="/images/google-play.png"
+                alt="Google Play"
+                width={138}
+                height={40}
+              />
+            </div>
+          </div>
+        </div>
 
         {/* Divider */}
         <div className="border-t border-[#D9D9D9] py-4">
-          <div className="container mx-auto flex justify-between items-center px-4">
+          <div className="flex flex-col-reverse md:flex-row justify-between items-center  py-4 md:py-0">
             {/* Copyright */}
             <p className="text-gray-100 text-[12px] font-rubik font-medium">
               © Copyright 2024, All Rights Reserved by Banana Studio
             </p>
             {/* Social Media Icons */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mb-4 md:mb-0">
               {/* Twitter */}
               <a
                 href="#"
