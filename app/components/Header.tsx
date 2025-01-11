@@ -217,59 +217,73 @@ const Header = () => {
           onClick={() => setIsDrawerOpen(false)}
         >
           <div
-            className="fixed top-0 left-0 w-64 h-full bg-white shadow-lg z-[9999] p-4"
+            className="fixed top-0 left-0 w-64 h-full bg-white shadow-lg z-[9999] p-4 flex flex-col justify-between"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header with Logo and Close Button */}
-            <div className="flex items-center justify-between">
-              {/* Logo */}
-              <div className="flex items-center">
-                <Image
-                  src="/images/logo-header.png"
-                  alt="Fresh Harvest Logo"
-                  width={100}
-                  height={40}
-                />
-              </div>
-              {/* Close Button */}
-              <button
-                onClick={() => setIsDrawerOpen(false)}
-                className="p-2 focus:outline-none"
-                aria-label="Close Drawer"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  className="w-6 h-6 text-gray-800"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
+            <div>
+              <div className="flex items-center justify-between">
+                {/* Logo */}
+                <div className="flex items-center">
+                  <Image
+                    src="/images/logo-header.png"
+                    alt="Fresh Harvest Logo"
+                    width={100}
+                    height={40}
                   />
-                </svg>
-              </button>
+                </div>
+                {/* Close Button */}
+                <button
+                  onClick={() => setIsDrawerOpen(false)}
+                  className="p-2 focus:outline-none"
+                  aria-label="Close Drawer"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2"
+                    stroke="currentColor"
+                    className="w-6 h-6 text-gray-800"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Navigation Links */}
+              <nav className="mt-8 space-y-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block text-gray-800 font-questrial text-[16px]"
+                    onClick={() => setIsDrawerOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </nav>
             </div>
 
-            {/* Navigation Links */}
-            <nav className="mt-8 space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block text-gray-800 font-questrial text-[16px]"
-                  onClick={() => setIsDrawerOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
+            {/* Login Button */}
+            <button
+              className="w-full bg-orange-500 text-white py-3 rounded-md font-medium hover:bg-orange-600 transition"
+              onClick={() => {
+                setIsDrawerOpen(false);
+                openModal(); // Trigger the login modal
+              }}
+            >
+              Login
+            </button>
           </div>
         </div>
       )}
+
       <LoginModal isOpen={isOpen} onClose={closeModal} />
     </>
   );
