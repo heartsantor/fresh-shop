@@ -4,28 +4,28 @@ import ProductCard from "./ProductCard";
 
 const products = [
   {
-    id: 1,
+    id: "1",
     name: "Mushroom",
     price: "$2.3",
     category: "Vegetables",
     image: "/items/mushroom.png",
   },
   {
-    id: 2,
+    id: "2",
     name: "Mustard",
     price: "$1.3",
     category: "Vegetables",
     image: "/items/mustard.png",
   },
   {
-    id: 3,
+    id: "3",
     name: "Orange",
     price: "$4.2",
     category: "Fruits",
     image: "/items/orange.png",
   },
   {
-    id: 4,
+    id: "4",
     name: "Pomegranate",
     price: "$11.2",
     category: "Fruits",
