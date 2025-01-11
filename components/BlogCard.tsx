@@ -22,7 +22,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ title, date, image }) => {
           className="rounded-lg"
         />
       </div>
-      <div className="py-4 flex flex-col">
+      <div className="py-4 px-4 flex flex-col">
         <p className="text-gray-500 text-sm mb-2">{date}</p>
         <h3 className="text-lg font-semibold text-gray-900 mb-4">{title}</h3>
         <a
