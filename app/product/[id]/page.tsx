@@ -2,14 +2,17 @@
 
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "next/navigation"; // Import useParams
 import { AppDispatch, RootState } from "@/app/store";
 import { fetchProductById } from "@/features/products/productsThunks";
 import { fetchCategoryById } from "@/features/categories/categoriesThunks";
 
 import ProductDetails from "@/components/ProductDetails";
 
-const ProductPage = ({ params }: { params: { id: string } }) => {
+const ProductPage = () => {
   const dispatch = useDispatch<AppDispatch>();
+  const params = useParams(); // Use useParams hook to get route params
+  const productId = params?.id as string;
 
   // Product and Category State
   const {
@@ -24,10 +27,10 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
   } = useSelector((state: RootState) => state.categories);
 
   useEffect(() => {
-    if (params?.id) {
-      dispatch(fetchProductById(params.id));
+    if (productId) {
+      dispatch(fetchProductById(productId));
     }
-  }, [dispatch, params?.id]);
+  }, [dispatch, productId]);
 
   useEffect(() => {
     if (product?.categoryId) {
