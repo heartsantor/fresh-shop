@@ -25,8 +25,11 @@ export default async function ProductPage({
 }: {
   params: { id: string };
 }) {
-  // Access params.id directly
-  const product = await fetchProduct(params.id);
+  // Resolve `params.id` properly
+  const { id } = params;
+
+  // Fetch product data
+  const product = await fetchProduct(id);
 
   if (!product) {
     return (
