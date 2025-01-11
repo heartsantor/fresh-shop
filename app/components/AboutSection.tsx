@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const AboutSection = () => {
   return (
-    <section className="relative py-16 bg-white">
+    <section className="relative pt-20 pb-40 bg-white">
       <div className="container mx-auto flex flex-col lg:flex-row items-center">
         <div className="lg:w-1/2 relative flex justify-center">
           <Image
@@ -15,7 +15,7 @@ const AboutSection = () => {
           />
           <div className="absolute top-10 right-10">
             <Image
-              src="/images/leaf.png"
+              src="/images/leaf-right.png"
               alt="Leaf Decoration"
               width={66}
               height={0}

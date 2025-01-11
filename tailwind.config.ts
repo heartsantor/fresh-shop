@@ -17,7 +17,10 @@ export default {
         foreground: "var(--foreground)",
         primary: "#FF6A1A",
         black: "#212337",
-        green: "#749B3F",
+        green: {
+          100: "#749B3F",
+          10: "#749B3F1A",
+        },
         gray: {
           100: "#4A4A52",
           80: "#A6A6A6",
@@ -115,6 +118,7 @@ export default {
       boxShadow: {
         product: "0px 4px 20px 0px rgba(9, 43, 94, 0.06)",
         "product-hover": "0px 6px 24px 0px rgba(9, 43, 94, 0.12)",
+        time: "0px 2.13px 10.67px 0px #092B5E29",
       },
     },
   },

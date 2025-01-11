@@ -37,7 +37,7 @@ const BlogSection = () => {
       {/* Leaf Decorations */}
       <div className="absolute top-[-20px] left-[-30px]">
         <Image
-          src="/images/leaf.png"
+          src="/images/leaf-right.png"
           alt="Leaf Decoration"
           width={100}
           height={100}
@@ -45,7 +45,7 @@ const BlogSection = () => {
       </div>
       <div className="absolute top-[-20px] right-[-30px]">
         <Image
-          src="/images/leaf.png"
+          src="/images/leaf-right.png"
           alt="Leaf Decoration"
           width={100}
           height={100}

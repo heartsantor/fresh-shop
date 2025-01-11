@@ -76,7 +76,7 @@ const ProductSection = () => {
       : products.filter((product) => product.category === activeTab);
 
   return (
-    <section className="relative py-40 bg-white">
+    <section className="relative py-40 bg-white overflow-hidden">
       <div className="container mx-auto">
         {/* Header */}
         <div className="relative text-center mb-6">
