@@ -9,23 +9,112 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        questrial: ["Questrial", "sans-serif"], // Statically define font family
-        rubik: ["Rubik", "sans-serif"], // Statically define font family
-      },
-      boxShadow: {
-        product: "0px 4px 20px 0px rgba(9, 43, 94, 0.06)", // Regular shadow
-        "product-hover": "0px 6px 24px 0px rgba(9, 43, 94, 0.12)", // Hover shadow
+        questrial: ["Questrial", "sans-serif"],
+        rubik: ["Rubik", "sans-serif"],
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        green: {
-          100: "#F4F6F6",
-          700: "#176D38",
+        primary: "#FF6A1A",
+        black: "#212337",
+        green: "#749B3F",
+        gray: {
+          100: "#4A4A52",
+          80: "#A6A6A6",
+          50: "#D9D9D9",
+          20: "#F4F6F6",
         },
-        orange: {
-          500: "#FF6A1A",
-        },
+      },
+
+      fontSize: {
+        "heading-1": [
+          "80px",
+          {
+            lineHeight: "1.1",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        "heading-2": [
+          "48px",
+          {
+            lineHeight: "1.2",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        "heading-3": [
+          "40px",
+          {
+            lineHeight: "1.2",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        "heading-4": [
+          "32px",
+          {
+            lineHeight: "1.2",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        "heading-5": [
+          "24px",
+          {
+            lineHeight: "1.2",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        "heading-6": [
+          "18px",
+          {
+            lineHeight: "1.2",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        "sub-heading-1": [
+          "20px",
+          {
+            lineHeight: "1.2",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        "sub-heading-2": [
+          "14px",
+          {
+            lineHeight: "1.2",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        "body-1": [
+          "20px",
+          {
+            lineHeight: "1.6",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        "body-2": [
+          "18px",
+          {
+            lineHeight: "1.6",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        "body-3": [
+          "14px",
+          {
+            lineHeight: "1.6",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        button: [
+          "18px",
+          {
+            lineHeight: "1.2",
+            letterSpacing: "-0.02em",
+          },
+        ],
+      },
+      boxShadow: {
+        product: "0px 4px 20px 0px rgba(9, 43, 94, 0.06)",
+        "product-hover": "0px 6px 24px 0px rgba(9, 43, 94, 0.12)",
       },
     },
   },
